@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface MenuIconProps {
@@ -7,6 +6,7 @@ interface MenuIconProps {
 }
 
 const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
+  if (!type) return null;
   const t = type.toLowerCase();
   
   // -- Helper for Pastry SVGs --
@@ -56,7 +56,7 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
 
   // -- Helper for Coffee Layers --
   const getLayers = (coffeeType: string) => {
-    // Espresso Doble - Fuller
+    // Espresso Doble - Fuller (65%)
     if (coffeeType.includes('doble')) {
       return [{ color: '#3C2A21', height: '65%' }];
     }
