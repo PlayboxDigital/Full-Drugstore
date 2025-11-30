@@ -121,7 +121,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
               <div 
                 key={index}
                 className={isPromo 
-                  ? "bg-gradient-to-br from-[#FFFBEB] to-white border border-brand-yellow/30 rounded-3xl p-8 md:p-12 shadow-[0_10px_40px_-10px_rgba(244,183,15,0.15)] relative overflow-hidden ring-1 ring-brand-yellow/10"
+                  ? "bg-gradient-to-br from-[#FFFBEB] to-white border border-brand-yellow/30 rounded-3xl p-6 md:p-8 shadow-[0_10px_40px_-10px_rgba(244,183,15,0.15)] relative overflow-hidden ring-1 ring-brand-yellow/10"
                   : "px-4 md:px-0"
                 }
               >
