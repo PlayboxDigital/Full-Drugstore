@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface MenuIconProps {
@@ -6,10 +7,9 @@ interface MenuIconProps {
 }
 
 const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
-  if (!type) return null;
   const t = type.toLowerCase();
   
-  // -- Helper for Pastry SVGs --
+  // -- Helper for Pastry/Nuts SVGs --
   const renderPastry = (itemType: string) => {
     if (itemType.includes('medialuna')) {
       return (
@@ -41,22 +41,39 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
         </svg>
       );
     }
-    if (itemType.includes('cookie') || itemType.includes('frutos secos')) {
+    // Logic for Nuts/Mixes - Updated to be more recognizable
+    if (itemType.includes('mix') || itemType.includes('almendras') || itemType.includes('nueces') || itemType.includes('frutos') || itemType.includes('cookie')) {
        return (
-        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
-          <circle cx="50" cy="50" r="30" fill="#D2B48C" stroke="#8B4513" strokeWidth="1" />
-          <circle cx="40" cy="40" r="3" fill="#3E2723" />
-          <circle cx="60" cy="45" r="4" fill="#3E2723" />
-          <circle cx="45" cy="60" r="3" fill="#3E2723" />
+        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm overflow-visible">
+          {/* Peanut (Maní) - Back/Left */}
+          <g transform="translate(15, 45) rotate(-30)">
+             <path d="M10,0 C10,-8 22,-8 22,0 C22,3 20,5 16,5 C20,5 22,7 22,10 C22,18 10,18 10,10 C10,7 12,5 16,5 C12,5 10,3 10,0 Z" fill="#F5DEB3" stroke="#CCA570" strokeWidth="1.5" />
+          </g>
+          
+          {/* Walnut (Nuez) - Back/Right */}
+          <g transform="translate(70, 35)">
+             <circle cx="0" cy="0" r="16" fill="#A1887F" stroke="#5D4037" strokeWidth="1.5" />
+             <path d="M-10,-5 Q0,5 10,-5" fill="none" stroke="#5D4037" strokeWidth="1" />
+             <path d="M-8,5 Q0,12 8,5" fill="none" stroke="#5D4037" strokeWidth="1" />
+             <path d="M0,-14 L0,14" fill="none" stroke="#5D4037" strokeWidth="1" />
+          </g>
+
+          {/* Almond (Almendra) - Front/Center - Detailed Teardrop */}
+          <g transform="translate(50, 65) rotate(10)">
+            <path d="M0,-35 C15,0 15,15 0,15 C-15,15 -15,0 0,-35 Z" fill="#D7CCC8" stroke="#8D6E63" strokeWidth="1.5" />
+            <path d="M0,-25 Q5,0 0,10" fill="none" stroke="#A1887F" strokeWidth="0.8" opacity="0.6" />
+            <path d="M-4,-15 Q-2,0 -4,8" fill="none" stroke="#A1887F" strokeWidth="0.8" opacity="0.6" />
+          </g>
         </svg>
        );
     }
+    
     return null;
   };
 
   // -- Helper for Coffee Layers --
   const getLayers = (coffeeType: string) => {
-    // Espresso Doble - Fuller (65%)
+    // Espresso Doble - Fuller
     if (coffeeType.includes('doble')) {
       return [{ color: '#3C2A21', height: '65%' }];
     }
@@ -125,8 +142,8 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
      );
   }
 
-  // 2. Just Pastry
-  if (t.includes('medialuna') || t.includes('croissant') || t.includes('alfajor') || t.includes('cookie') || t.includes('frutos')) {
+  // 2. Just Pastry or Nuts
+  if (t.includes('medialuna') || t.includes('croissant') || t.includes('alfajor') || t.includes('cookie') || t.includes('frutos') || t.includes('mix') || t.includes('almendras') || t.includes('nueces')) {
      return <div className={`w-14 h-14 ${className}`}>{renderPastry(t)}</div>;
   }
 
