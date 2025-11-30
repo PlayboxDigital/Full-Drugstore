@@ -11,6 +11,37 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
   
   // -- Helper for Pastry/Nuts SVGs --
   const renderPastry = (itemType: string) => {
+    // Frutos Secos (Nuts) - Realistic Style
+    if (itemType.includes('mix') || itemType.includes('almendras') || itemType.includes('nueces') || itemType.includes('frutos') || itemType.includes('cookie')) {
+       return (
+        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm overflow-visible">
+          {/* Walnut (Nuez) - Background Right - Brain-like shape */}
+          <g transform="translate(60, 30)">
+             <path d="M0,10 Q-5,0 0,-10 Q10,-15 20,-10 Q25,0 20,10 Q10,20 0,10 Z" fill="#8D6E63" stroke="#5D4037" strokeWidth="1.5" />
+             <path d="M5,-5 Q10,0 15,-5" fill="none" stroke="#5D4037" strokeWidth="1" />
+             <path d="M5,5 Q10,0 15,5" fill="none" stroke="#5D4037" strokeWidth="1" />
+             <path d="M10,-12 L10,12" fill="none" stroke="#4E342E" strokeWidth="1" />
+          </g>
+
+          {/* Peanut (Maní) - Background Left - Figure 8 shape */}
+          <g transform="translate(10, 40) rotate(-20)">
+             <path d="M5,0 C5,-8 18,-8 18,0 C18,3 16,5 11.5,5 C16,5 18,7 18,12 C18,20 5,20 5,12 C5,7 7,5 11.5,5 C7,5 5,3 5,0 Z" fill="#FFE082" stroke="#FBC02D" strokeWidth="1.5" />
+             <path d="M8,0 L15,0" fill="none" stroke="#FBC02D" strokeWidth="1" opacity="0.6" />
+             <path d="M8,12 L15,12" fill="none" stroke="#FBC02D" strokeWidth="1" opacity="0.6" />
+          </g>
+          
+          {/* Almond (Almendra) - Foreground Center - Teardrop shape */}
+          <g transform="translate(35, 50) rotate(15)">
+            <path d="M0,-25 C18,0 18,15 0,15 C-18,15 -18,0 0,-25 Z" fill="#D7CCC8" stroke="#8D6E63" strokeWidth="1.5" />
+            {/* Texture lines */}
+            <path d="M0,-15 Q3,0 0,10" fill="none" stroke="#8D6E63" strokeWidth="1" opacity="0.5" />
+            <path d="M-5,-5 Q-2,5 -5,10" fill="none" stroke="#8D6E63" strokeWidth="1" opacity="0.5" />
+            <path d="M5,-5 Q2,5 5,10" fill="none" stroke="#8D6E63" strokeWidth="1" opacity="0.5" />
+          </g>
+        </svg>
+       );
+    }
+
     if (itemType.includes('medialuna')) {
       return (
         <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
@@ -30,42 +61,12 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
     if (itemType.includes('alfajor')) {
       return (
         <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
-           {/* Bottom Cookie */}
            <ellipse cx="50" cy="65" rx="35" ry="12" fill="#8B4513" />
-           {/* Filling */}
            <rect x="15" y="50" width="70" height="15" fill="#5D4037" />
-           {/* Top Cookie */}
            <ellipse cx="50" cy="50" rx="35" ry="12" fill="#8B4513" />
-           {/* Shine */}
            <ellipse cx="50" cy="50" rx="30" ry="10" fill="#A0522D" />
         </svg>
       );
-    }
-    // Logic for Nuts/Mixes - Updated to be more recognizable
-    if (itemType.includes('mix') || itemType.includes('almendras') || itemType.includes('nueces') || itemType.includes('frutos') || itemType.includes('cookie')) {
-       return (
-        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm overflow-visible">
-          {/* Peanut (Maní) - Back/Left */}
-          <g transform="translate(15, 45) rotate(-30)">
-             <path d="M10,0 C10,-8 22,-8 22,0 C22,3 20,5 16,5 C20,5 22,7 22,10 C22,18 10,18 10,10 C10,7 12,5 16,5 C12,5 10,3 10,0 Z" fill="#F5DEB3" stroke="#CCA570" strokeWidth="1.5" />
-          </g>
-          
-          {/* Walnut (Nuez) - Back/Right */}
-          <g transform="translate(70, 35)">
-             <circle cx="0" cy="0" r="16" fill="#A1887F" stroke="#5D4037" strokeWidth="1.5" />
-             <path d="M-10,-5 Q0,5 10,-5" fill="none" stroke="#5D4037" strokeWidth="1" />
-             <path d="M-8,5 Q0,12 8,5" fill="none" stroke="#5D4037" strokeWidth="1" />
-             <path d="M0,-14 L0,14" fill="none" stroke="#5D4037" strokeWidth="1" />
-          </g>
-
-          {/* Almond (Almendra) - Front/Center - Detailed Teardrop */}
-          <g transform="translate(50, 65) rotate(10)">
-            <path d="M0,-35 C15,0 15,15 0,15 C-15,15 -15,0 0,-35 Z" fill="#D7CCC8" stroke="#8D6E63" strokeWidth="1.5" />
-            <path d="M0,-25 Q5,0 0,10" fill="none" stroke="#A1887F" strokeWidth="0.8" opacity="0.6" />
-            <path d="M-4,-15 Q-2,0 -4,8" fill="none" stroke="#A1887F" strokeWidth="0.8" opacity="0.6" />
-          </g>
-        </svg>
-       );
     }
     
     return null;

@@ -152,11 +152,11 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
                       </div>
                       
                       {/* Text Info */}
-                      <div className="flex-grow min-w-0 flex flex-col">
+                      <div className="flex-1 min-w-0 flex flex-col">
                         <div className={`flex items-start justify-between border-b ${isPromo ? 'border-brand-yellow/20' : 'border-gray-200'} pb-2 mb-2 border-dashed`}>
-                           {/* Using break-words and max-width to ensure text wraps */}
-                           <span className="font-serif text-lg text-gray-800 leading-tight pr-2 break-words max-w-[70%]">{item.name}</span>
-                           <span className={`font-sans font-bold text-lg ${category.textColor} whitespace-nowrap ml-auto`}>{item.price}</span>
+                           {/* Use flex-1 to allow text to take space and wrap, instead of truncating */}
+                           <span className="font-serif text-lg text-gray-800 leading-tight pr-2 flex-1">{item.name}</span>
+                           <span className={`font-sans font-bold text-lg ${category.textColor} whitespace-nowrap`}>{item.price}</span>
                         </div>
                         {item.description && (
                           <p className="text-sm text-gray-500 font-light leading-snug mb-1">
