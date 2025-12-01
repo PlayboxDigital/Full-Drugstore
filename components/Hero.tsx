@@ -30,12 +30,11 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         {/* Responsive Headline - Unified Style */}
         <h1 className="font-serif font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-xl text-4xl md:text-6xl lg:text-7xl">
           Un espacio único,<br />
-          abierto las 24 horas.
+          pensado para vos.
         </h1>
         
         <p className="font-sans text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md text-balance">
-          Café de especialidad, comida casera y todo lo que necesitás.<br className="hidden md:block" />
-          Calidad premium en el corazón de La Plata.
+          Café de especialidad, comida casera y todo lo que necesitás en el centro de La Plata.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
