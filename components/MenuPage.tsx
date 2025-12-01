@@ -30,9 +30,9 @@ const menuData: MenuCategory[] = [
     bgColor: "bg-yellow-50",
     icon: Tag,
     items: [
-      { name: "Café Chico + Alfajor", price: "$3.200", description: "La combinación dulce ideal para acompañar tu café." },
-      { name: "Café Chico + Mix con pasas", price: "$3.900", description: "Energía saludable y café recién hecho." },
-      { name: "Café Grande + Alfajor", price: "$4.500", description: "Para los que necesitan un extra de café." },
+      { name: "Café Chico + Alfajor", price: "$2.500", description: "La combinación dulce ideal para acompañar tu café." },
+      { name: "Café Chico + Mix con pasas", price: "$4.000", description: "Energía saludable y café recién hecho." },
+      { name: "Café Grande + Alfajor", price: "$3.500", description: "Para los que necesitan un extra de café." },
     ]
   },
   {
