@@ -65,9 +65,24 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-light uppercase tracking-wider">
-          <p>&copy; {new Date().getFullYear()} Full Drugstore.</p>
-          <p>La Plata, Buenos Aires, Argentina</p>
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:flex-row gap-4 text-xs text-gray-400 font-light uppercase tracking-wider text-center md:text-left">
+            <p>&copy; {new Date().getFullYear()} Full Drugstore.</p>
+            <p className="hidden md:block">|</p>
+            <p>La Plata, Buenos Aires, Argentina</p>
+          </div>
+          
+          <a 
+            href="https://playbox-i-a.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-white border border-gray-200 text-gray-900 px-5 py-2.5 rounded-full hover:shadow-lg transition-all shadow-sm group"
+          >
+            <span className="text-[10px] uppercase tracking-widest font-semibold text-gray-500">Designed by</span>
+            <span className="font-display font-bold text-sm tracking-tight text-gray-900">
+              Playbox<span className="text-violet-600">IA</span>
+            </span>
+          </a>
         </div>
       </div>
     </footer>

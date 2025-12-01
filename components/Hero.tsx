@@ -8,16 +8,17 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    <div id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://res.cloudinary.com/ddbqqeh8x/image/upload/v1764381843/IMG_1216_t1upcr.jpg" 
           alt="Full Drugstore Local" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover blur-[3px] scale-105 opacity-90"
         />
-        <div className="absolute inset-0 bg-gray-900/60 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        {/* Stronger overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
@@ -26,21 +27,23 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <span className="text-xs font-bold tracking-widest uppercase">Abierto las 24 Horas</span>
         </div>
         
-        <h1 className="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
-          Tu pausa necesaria <br />
-          <span className="italic font-light text-brand-yellow">en cualquier momento</span>
+        {/* Responsive Headline - Unified Style */}
+        <h1 className="font-serif font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-xl text-4xl md:text-6xl lg:text-7xl">
+          Un espacio único,<br />
+          abierto las 24 horas.
         </h1>
         
-        <p className="font-sans text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-          Café de especialidad, comida casera y todo lo que necesitas, siempre disponible para vos en el corazón de La Plata.
+        <p className="font-sans text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md text-balance">
+          Café de especialidad, comida casera y todo lo que necesitás.<br className="hidden md:block" />
+          Calidad premium en el corazón de La Plata.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
           <button 
-            onClick={() => onNavigate?.('home', 'products')}
+            onClick={() => onNavigate?.('menu')}
             className="group px-8 py-4 bg-brand-yellow text-brand-dark font-bold rounded-full hover:bg-white hover:text-brand-dark transition-all duration-300 shadow-[0_0_20px_rgba(244,183,15,0.4)] hover:shadow-xl flex items-center justify-center gap-2"
           >
-            Ver Servicios
+            Ver Menú
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
           <a 

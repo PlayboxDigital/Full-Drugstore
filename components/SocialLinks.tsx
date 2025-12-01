@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, Facebook, MessageCircle, Bike, ShoppingBag } from 'lucide-react';
+import { Instagram, Facebook, MessageCircle, Bike, ShoppingBag, Star } from 'lucide-react';
 import { SocialLink } from '../types';
 
 const socialLinks: SocialLink[] = [
@@ -38,21 +38,28 @@ const socialLinks: SocialLink[] = [
     icon: MessageCircle,
     color: 'text-green-600',
     label: 'Consultas'
+  },
+  {
+    name: 'Calificanos',
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLScqnCVf3vd1XWko43JhhBVMwNP3FbPccmQJTTy2Y-OrhZjz2A/viewform?usp=dialog',
+    icon: Star,
+    color: 'text-yellow-500',
+    label: 'Tu Opinión'
   }
 ];
 
 const SocialLinks: React.FC = () => {
   return (
     <section id="contact" className="py-24 bg-white border-t border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl font-bold text-gray-900 mb-4">Estamos Conectados</h2>
           <p className="text-gray-500 font-light text-lg">
-            Hacé tu pedido online o seguinos en redes.
+            Hacé tu pedido online, seguinos en redes o dejanos tu opinión.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {socialLinks.map((link) => (
             <a
               key={link.name}
