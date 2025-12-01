@@ -30,9 +30,9 @@ const menuData: MenuCategory[] = [
     bgColor: "bg-yellow-50",
     icon: Tag,
     items: [
-      { name: "Café Chico + Alfajor", price: "$3.500", description: "El clásico combo para el recreo." },
-      { name: "Café Chico + Frutos Secos", price: "$5.200", description: "Energía saludable y café recién hecho." },
-      { name: "Café Grande + Alfajor", price: "$4.800", description: "Para los que necesitan un extra de café." },
+      { name: "Café Chico + Alfajor", price: "$3.200", description: "La combinación dulce ideal para acompañar tu café." },
+      { name: "Café Chico + Mix con pasas", price: "$3.900", description: "Energía saludable y café recién hecho." },
+      { name: "Café Grande + Alfajor", price: "$4.500", description: "Para los que necesitan un extra de café." },
     ]
   },
   {
@@ -42,17 +42,17 @@ const menuData: MenuCategory[] = [
     bgColor: "bg-orange-50",
     icon: Coffee,
     items: [
-      { name: "Espresso Simple", price: "$2.500", description: "Un shot de café intenso y puro." },
-      { name: "Espresso Doble", price: "$3.000", description: "Doble carga de café para mayor intensidad." },
-      { name: "Cortado Chico", price: "$3.500", description: "Espresso con un toque de leche vaporizada." },
-      { name: "Cortado Grande", price: "$4.000", description: "La proporción perfecta en taza grande." },
-      { name: "Latte Chico", price: "$3.500", description: "Espresso con abundante leche cremosa." },
-      { name: "Latte Grande", price: "$4.000", description: "Suave y lácteo, ideal para disfrutar despacio." },
-      { name: "Capuchino Chico", price: "$3.500", description: "Espresso, leche y mucha espuma de leche." },
-      { name: "Capuchino Grande", price: "$4.000", description: "Más espuma, más sabor, tamaño grande." },
-      { name: "Moka Grande", price: "$4.300", description: "La mezcla perfecta de espresso, leche y chocolate." },
-      { name: "Café Grande", price: "$4.000", description: "Café estilo americano, suave y largo." },
-      { name: "Té", price: "$2.000", description: "Selección de té negro o infusiones de hierbas." },
+      { name: "Espresso Simple", price: "$1.900", description: "Un shot de café intenso y puro." },
+      { name: "Espresso Doble", price: "$2.400", description: "Doble carga de café para mayor intensidad." },
+      { name: "Cortado Chico", price: "$2.800", description: "Espresso con un toque de leche vaporizada." },
+      { name: "Cortado Grande", price: "$3.300", description: "La proporción perfecta en taza grande." },
+      { name: "Latte Chico", price: "$2.800", description: "Espresso con abundante leche cremosa." },
+      { name: "Latte Grande", price: "$3.400", description: "Suave y lácteo, ideal para disfrutar despacio." },
+      { name: "Capuchino Chico", price: "$2.800", description: "Espresso, leche y mucha espuma de leche." },
+      { name: "Capuchino Grande", price: "$3.400", description: "Más espuma, más sabor, tamaño grande." },
+      { name: "Moca Grande", price: "$3.700", description: "La mezcla perfecta de espresso, leche y chocolate." },
+      { name: "Café Grande", price: "$3.400", description: "Café estilo americano, suave y largo." },
+      { name: "Té", price: "$1.400", description: "Selección de té negro o infusiones de hierbas." },
     ]
   },
   {
@@ -65,7 +65,6 @@ const menuData: MenuCategory[] = [
       { name: "Medialuna", price: "$1.500", description: "Clásica de manteca, dulce y esponjosa." },
       { name: "Croissant", price: "$2.000", description: "Hojaldrado francés, crujiente y mantecoso." },
       { name: "Alfajor", price: "$1.000", description: "Dulce de leche y cobertura de chocolate." },
-      { name: "Frutos Secos", price: "$2.400", description: "Mix energético de nueces y almendras." },
     ]
   },
   {

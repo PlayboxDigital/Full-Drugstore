@@ -11,32 +11,33 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
   
   // -- Helper for Pastry/Nuts SVGs --
   const renderPastry = (itemType: string) => {
-    // Frutos Secos (Nuts) - Realistic Style
+    // Frutos Secos (Nuts) - Cluster Arrangement
     if (itemType.includes('mix') || itemType.includes('almendras') || itemType.includes('nueces') || itemType.includes('frutos') || itemType.includes('cookie')) {
        return (
         <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm overflow-visible">
-          {/* Walnut (Nuez) - Background Right - Brain-like shape */}
-          <g transform="translate(60, 30)">
-             <path d="M0,10 Q-5,0 0,-10 Q10,-15 20,-10 Q25,0 20,10 Q10,20 0,10 Z" fill="#8D6E63" stroke="#5D4037" strokeWidth="1.5" />
-             <path d="M5,-5 Q10,0 15,-5" fill="none" stroke="#5D4037" strokeWidth="1" />
-             <path d="M5,5 Q10,0 15,5" fill="none" stroke="#5D4037" strokeWidth="1" />
-             <path d="M10,-12 L10,12" fill="none" stroke="#4E342E" strokeWidth="1" />
+          {/* 1. Walnut (Nuez) - Center Background */}
+          <g transform="translate(30, 10)">
+             {/* Brain-like shape */}
+             <path d="M20,0 C35,-5 50,5 45,20 C50,35 35,50 20,45 C5,50 -10,35 0,20 C-5,5 5,-5 20,0 Z" 
+                   fill="#6D4C41" stroke="#4E342E" strokeWidth="1.5" />
+             {/* Texture */}
+             <path d="M20,5 Q20,20 20,40" fill="none" stroke="#4E342E" strokeWidth="1" />
+             <path d="M5,20 Q20,20 35,20" fill="none" stroke="#4E342E" strokeWidth="1" />
           </g>
 
-          {/* Peanut (Maní) - Background Left - Figure 8 shape */}
-          <g transform="translate(10, 40) rotate(-20)">
-             <path d="M5,0 C5,-8 18,-8 18,0 C18,3 16,5 11.5,5 C16,5 18,7 18,12 C18,20 5,20 5,12 C5,7 7,5 11.5,5 C7,5 5,3 5,0 Z" fill="#FFE082" stroke="#FBC02D" strokeWidth="1.5" />
-             <path d="M8,0 L15,0" fill="none" stroke="#FBC02D" strokeWidth="1" opacity="0.6" />
-             <path d="M8,12 L15,12" fill="none" stroke="#FBC02D" strokeWidth="1" opacity="0.6" />
+          {/* 2. Almond (Almendra) - Bottom Left, tilted, closer to center */}
+          <g transform="translate(20, 35) rotate(-15)">
+            <path d="M15,0 C28,18 28,40 15,45 C2,40 2,18 15,0 Z" 
+                  fill="#A1887F" stroke="#5D4037" strokeWidth="1.5" />
+            <line x1="15" y1="10" x2="15" y2="35" stroke="#5D4037" strokeWidth="0.5" opacity="0.5" />
           </g>
-          
-          {/* Almond (Almendra) - Foreground Center - Teardrop shape */}
-          <g transform="translate(35, 50) rotate(15)">
-            <path d="M0,-25 C18,0 18,15 0,15 C-18,15 -18,0 0,-25 Z" fill="#D7CCC8" stroke="#8D6E63" strokeWidth="1.5" />
-            {/* Texture lines */}
-            <path d="M0,-15 Q3,0 0,10" fill="none" stroke="#8D6E63" strokeWidth="1" opacity="0.5" />
-            <path d="M-5,-5 Q-2,5 -5,10" fill="none" stroke="#8D6E63" strokeWidth="1" opacity="0.5" />
-            <path d="M5,-5 Q2,5 5,10" fill="none" stroke="#8D6E63" strokeWidth="1" opacity="0.5" />
+
+          {/* 3. Peanuts (Maní) - Bottom Right - Two separate seeds, closer to center */}
+          <g transform="translate(50, 40)">
+             {/* Seed 1 */}
+             <ellipse cx="5" cy="10" rx="7" ry="11" transform="rotate(-15 5 10)" fill="#FFD54F" stroke="#FFA000" strokeWidth="1.5" />
+             {/* Seed 2 */}
+             <ellipse cx="22" cy="15" rx="7" ry="11" transform="rotate(30 22 15)" fill="#FFD54F" stroke="#FFA000" strokeWidth="1.5" />
           </g>
         </svg>
        );
@@ -102,8 +103,8 @@ const MenuIcon: React.FC<MenuIconProps> = ({ type, className = "" }) => {
       return [{ color: '#3C2A21', height: '30%' }, { color: '#F5E6D3', height: '30%' }, { color: '#FFF8F0', height: '30%' }];
     }
     
-    // Moka
-    if (coffeeType.includes('moka')) {
+    // Moca (or Moka)
+    if (coffeeType.includes('moka') || coffeeType.includes('moca')) {
       return [{ color: '#4A3728', height: '15%' }, { color: '#3C2A21', height: '25%' }, { color: '#F5E6D3', height: '40%' }, { color: '#FFF8F0', height: '10%' }];
     }
     
