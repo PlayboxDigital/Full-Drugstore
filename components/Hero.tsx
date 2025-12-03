@@ -9,13 +9,18 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
     <div id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://res.cloudinary.com/ddbqqeh8x/image/upload/v1764381843/IMG_1216_t1upcr.jpg" 
-          alt="Full Drugstore Local" 
-          className="w-full h-full object-cover blur-[3px] scale-105 opacity-90"
-        />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover blur-[2px] scale-105 opacity-90"
+        >
+          <source src="https://res.cloudinary.com/ddbqqeh8x/video/upload/v1764729898/Video_Project_1_ml4jaj.mp4" type="video/mp4" />
+        </video>
+        
         {/* Stronger overlay for better text contrast */}
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
